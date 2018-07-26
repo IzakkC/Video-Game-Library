@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B259FE0210A1E7A0063A31C /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B259FDF210A1E7A0063A31C /* GameManager.swift */; };
 		5B6A02522108E866005A003E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A02512108E866005A003E /* AppDelegate.swift */; };
 		5B6A02542108E866005A003E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A02532108E866005A003E /* ViewController.swift */; };
 		5B6A02572108E866005A003E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B6A02552108E866005A003E /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B259FDF210A1E7A0063A31C /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		5B6A024E2108E866005A003E /* Video Game Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Video Game Library.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B6A02512108E866005A003E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B6A02532108E866005A003E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				5B6A02582108E868005A003E /* Assets.xcassets */,
 				5B6A025D2108E868005A003E /* Info.plist */,
 				5B6A02812108EC3D005A003E /* Game.swift */,
+				5B259FDF210A1E7A0063A31C /* GameManager.swift */,
 			);
 			path = "Video Game Library";
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B6A02542108E866005A003E /* ViewController.swift in Sources */,
+				5B259FE0210A1E7A0063A31C /* GameManager.swift in Sources */,
 				5B6A02822108EC3D005A003E /* Game.swift in Sources */,
 				5B6A02522108E866005A003E /* AppDelegate.swift in Sources */,
 			);
