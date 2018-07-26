@@ -32,6 +32,15 @@ class GameManager {
         return games[index]
     }
     
+    func removeGame(at index: Int) {
+        games.remove(at: index)
+    }
+    
+    func checkGameInOrOut(at index: Int) {
+        let game = games[index]
+        game.availability = !game.availability
+    }
+    
     func getGameCount() -> Int {
         return games.count
     }

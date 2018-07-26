@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,18 +14,84 @@
         <!--Game Library-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Video_Game_Library" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GameListViewController" customModule="Video_Game_Library" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qj8-oW-NM7">
+                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameTableViewCell" rowHeight="90" id="ZxF-Qs-iIG" customClass="GameTableViewCell" customModule="Video_Game_Library" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZxF-Qs-iIG" id="Cc3-RA-WZN">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rK9-iI-O9g">
+                                                    <rect key="frame" x="15" y="11" width="217" height="26.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Genre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nC6-RN-ITg">
+                                                    <rect key="frame" x="15" y="54.5" width="96" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Availability" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sju-A7-CJF">
+                                                    <rect key="frame" x="240" y="30" width="120" height="30"/>
+                                                    <color key="backgroundColor" red="0.29388420853915842" green="1" blue="0.15499193434386227" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="QKv-4e-j5a"/>
+                                                        <constraint firstAttribute="width" constant="120" id="sEt-4P-jwP"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="0.99876089165792659" blue="0.93839982005290845" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Sju-A7-CJF" firstAttribute="centerY" secondItem="Cc3-RA-WZN" secondAttribute="centerY" id="3XT-rR-4C0"/>
+                                                <constraint firstItem="rK9-iI-O9g" firstAttribute="top" secondItem="Cc3-RA-WZN" secondAttribute="topMargin" id="4Cw-kY-Elc"/>
+                                                <constraint firstItem="nC6-RN-ITg" firstAttribute="top" secondItem="rK9-iI-O9g" secondAttribute="bottom" constant="17" id="9R6-Jg-ehZ"/>
+                                                <constraint firstItem="nC6-RN-ITg" firstAttribute="leading" secondItem="Cc3-RA-WZN" secondAttribute="leadingMargin" id="DZL-1Z-bWC"/>
+                                                <constraint firstItem="Sju-A7-CJF" firstAttribute="trailing" secondItem="Cc3-RA-WZN" secondAttribute="trailingMargin" id="H14-Gi-K78"/>
+                                                <constraint firstItem="Sju-A7-CJF" firstAttribute="leading" secondItem="rK9-iI-O9g" secondAttribute="trailing" constant="8" id="KZp-3d-rA3"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="nC6-RN-ITg" secondAttribute="bottom" constant="3.5" id="x9K-kA-oIh"/>
+                                                <constraint firstItem="rK9-iI-O9g" firstAttribute="leading" secondItem="Cc3-RA-WZN" secondAttribute="leadingMargin" id="xXO-dZ-GxI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="GameTitleLabel" destination="rK9-iI-O9g" id="TEX-iu-z2c"/>
+                                            <outlet property="availibilityLabel" destination="Sju-A7-CJF" id="LaR-6k-D0I"/>
+                                            <outlet property="gameGenreLabel" destination="nC6-RN-ITg" id="gEl-fD-akt"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Et1-vf-RGY"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="0IO-Jk-mJA"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Qj8-oW-NM7" secondAttribute="bottom" id="F50-gq-Vtx"/>
+                            <constraint firstItem="Qj8-oW-NM7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="I8M-yI-LYd"/>
+                            <constraint firstItem="Qj8-oW-NM7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JHb-Qq-Uva"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qj8-oW-NM7" secondAttribute="trailing" id="hR9-Rx-cq2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Game Library" id="PZb-yb-TY7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1055" y="-564"/>
+            <point key="canvasLocation" x="1053.5999999999999" y="-564.46776611694156"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6O8-Hh-ZI6">
