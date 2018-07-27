@@ -94,6 +94,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Qj8-oW-NM7" id="6Oc-RK-NdT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -102,7 +105,7 @@
         <!--Add New Game-->
         <scene sceneID="cbx-8R-Eo8">
             <objects>
-                <viewController id="dXe-VA-3b5" sceneMemberID="viewController">
+                <viewController id="dXe-VA-3b5" customClass="AddGameViewController" customModule="Video_Game_Library" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MZ6-HU-p2D">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,6 +130,10 @@
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YlO-au-0SK">
                                 <rect key="frame" x="0.0" y="240" width="375" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="dXe-VA-3b5" id="dFE-ir-pje"/>
+                                    <outlet property="delegate" destination="dXe-VA-3b5" id="L8G-TI-Pqb"/>
+                                </connections>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -145,10 +152,20 @@
                         <viewLayoutGuide key="safeArea" id="FfW-dR-vav"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Game" id="PhB-7K-TPR">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="vDX-Kb-axG"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ui1-3k-tMu">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="dXe-VA-3b5" id="FmB-DF-agh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="genrePicker" destination="YlO-au-0SK" id="QhA-3R-C57"/>
+                        <outlet property="titleTextField" destination="jXI-g2-5xK" id="S2I-ql-Ouz"/>
+                        <segue destination="ijp-4I-KGJ" kind="unwind" identifier="unwindToGameLibrary" unwindAction="unwindToGameLibrary:" id="NaY-WL-W1i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xJx-oT-MwA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ijp-4I-KGJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2017" y="-564"/>
         </scene>
