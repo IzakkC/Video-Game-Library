@@ -35,7 +35,16 @@ class GameListViewController: UIViewController, UITableViewDataSource, UITableVi
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
         
-        return [deleteAction]
+        let game = GameManager.sharedInstance.getGame(at: indexPath.row)
+        let title = game.availability ? "Check Out" : "Check In"
+        
+        let checkOutInAction = UITableViewRowAction(style: .normal, title: title) { _ , _ in
+            GameManager.sharedInstance.checkGameInOrOut(at: indexPath.row)
+            tableView.reloadData()
+        }
+        
+        
+        return [deleteAction, checkOutInAction]
     }
     
 
